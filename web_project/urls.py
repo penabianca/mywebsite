@@ -8,6 +8,8 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'web_project.views.home', name='home'),
     url(r'^client/',include('web_project.website.urls')),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve',
+                 {'document_root': settings.MEDIA_ROOT}),
     # url(r'^web_project/', include('web_project.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
